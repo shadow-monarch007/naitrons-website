@@ -5,7 +5,13 @@
   --foreground: #171717;
 }
 
-@theme inline {
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+/* Theme token aliases (previously in @theme inline – rewritten for portability) */
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -22,5 +28,46 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+  font-feature-settings: "liga" 1, "kern" 1;
 }
+
+/* Accessibility utility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--foreground);
+  color: var(--background);
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 4px 0;
+  z-index: 100;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Layout helpers */
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 2vw, 2rem);
+  max-width: 78rem;
+}
+
+/* Section spacing scale */
+.section {
+  padding-block: clamp(2.5rem, 6vh, 5rem);
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-block: 2.5rem;
+  }
+}
+
+/* (Temporarily removed gradient overlay & global transitions to work around build panic) */

@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+/lcov-report
+.vitest*
 
 # next.js
 /.next/
@@ -32,6 +34,16 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+
+# editor
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# logs
+logs
+*.log
+*.swp
 
 # vercel
 .vercel
