@@ -31,8 +31,12 @@ export function ThemeToggle() {
     if (updateState) setTheme(next);
     localStorage.setItem('theme-pref', next);
     const root = document.documentElement;
+    // Clear both explicit classes first
+    root.classList.remove('light');
+    root.classList.remove('dark');
     const effective = next === 'system' ? getSystemTheme() : next;
-    if (effective === 'dark') root.classList.add('dark'); else root.classList.remove('dark');
+    if (effective === 'dark') root.classList.add('dark');
+    if (effective === 'light') root.classList.add('light');
   }
 
   function cycle() {

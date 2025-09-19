@@ -11,6 +11,12 @@
   --foreground: #ededed;
 }
 
+/* Explicit light theme class to override system dark when user chooses light */
+.light {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
 /* Theme token aliases (previously in @theme inline – rewritten for portability) */
 :root {
   --color-background: var(--background);
@@ -19,8 +25,9 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Apply system preference only when user hasn't explicitly chosen light or dark */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light):not(.dark) {
     --background: #0a0a0a;
     --foreground: #ededed;
   }

@@ -69,7 +69,7 @@ export default function RootLayout({
         {/* Prevent theme flash: apply saved or system theme before React hydration */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(() => {try{const pref=localStorage.getItem('theme-pref')||'system';const sys=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';const eff=pref==='system'?sys:pref;const root=document.documentElement;eff==='dark'?root.classList.add('dark'):root.classList.remove('dark');}catch(e){}})();`
+            __html: `(() => {try{const pref=localStorage.getItem('theme-pref')||'system';const sys=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';const eff=pref==='system'?sys:pref;const root=document.documentElement;root.classList.remove('light');root.classList.remove('dark');if(eff==='dark'){root.classList.add('dark');}if(eff==='light'){root.classList.add('light');}}catch(e){}})();`
           }}
         />
         <SEOJsonLd />
