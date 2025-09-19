@@ -47,14 +47,31 @@ export async function submitContact(formData: FormData): Promise<ContactActionRe
       return { ok: false, error: 'Too many submissions. Please wait a minute.' };
     }
 
-    // Simulate sending (replace with email service integration)
-    await new Promise(r => setTimeout(r, 350));
+    // Simulate network latency
+    await new Promise(r => setTimeout(r, 200));
 
-    // Email integration placeholder (guarded by env)
+    // Optional: send via Resend API if configured (no SDK import required)
     if (process.env.RESEND_API_KEY) {
-      // Example pseudocode (do not import resend unless configured)
-      // const resend = new Resend(process.env.RESEND_API_KEY);
-      // await resend.emails.send({ from: 'contact@naitrons.com', to: 'inbox@naitrons.com', subject: 'New Inquiry', text: JSON.stringify(parsed.data, null, 2) });
+      try {
+        const res = await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            from: 'Website <noreply@naitrons.tech>',
+            to: ['naitronsolutions@gmail.com'],
+            subject: 'New Website Inquiry',
+            text: `Name: ${parsed.data.name}\nEmail: ${parsed.data.email}\n\nMessage:\n${parsed.data.message}`,
+          }),
+        });
+        if (!res.ok) {
+          console.warn('Resend email failed', await res.text());
+        }
+      } catch (e) {
+        console.warn('Resend email error', e);
+      }
     }
 
     console.log("CONTACT_INQUIRY", parsed.data);

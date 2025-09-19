@@ -116,7 +116,7 @@ npm run start
 ### Deploying to Vercel with a .tech Domain
 1. Push this repository to GitHub (see Git section below).
 2. In Vercel dashboard: New Project → Import from GitHub → Select repo → Framework auto-detected (Next.js).
-3. Environment variables (optional): set `NEXT_PUBLIC_SITE_URL` to your production URL (e.g. `https://yourname.tech`).
+3. Environment variables (optional): set `NEXT_PUBLIC_SITE_URL` to your production URL (e.g. `https://naitrons.tech`).
 4. After first deploy, go to Project Settings → Domains → Add:
 	- `yourname.tech`
 	- `www.yourname.tech` (optional, set redirect to apex)
@@ -144,6 +144,16 @@ git remote add origin git@github.com:YOUR_USER/YOUR_REPO.git
 git push -u origin main
 ```
 
+### Live Update Flow (While Site Is Live)
+With Vercel + Git integration, you can safely make changes while the site is live:
+
+- Create a feature branch and push → Vercel automatically builds a Preview Deployment at a unique URL.
+- Review and test the preview. You can share the link with teammates or clients.
+- Merge to `main` (or click "Promote to Production" in Vercel) → Production updates atomically, with near-zero downtime.
+- Need to revert? In Vercel Deployments, redeploy an earlier commit or roll back immediately.
+
+This means you can continue iterating without disrupting the live site, and only promote when ready.
+
 ### Ongoing Collaboration (You + Friend)
 Recommended workflow:
 - Create feature branches: `feat/globe-perf`, `fix/contact-rate-limit`.
@@ -166,7 +176,7 @@ Branch naming suggestions:
 ### Environment Variable Management
 Use `.env.local` (ignored by git) for:
 ```
-NEXT_PUBLIC_SITE_URL=https://yourname.tech
+NEXT_PUBLIC_SITE_URL=https://naitrons.tech
 RESEND_API_KEY=your_key_here
 NEXT_PUBLIC_ANALYTICS_ID=your_analytics_id
 ```
@@ -192,11 +202,11 @@ This project now exposes:
 You can override the canonical base URL used in both by setting an environment variable before build/start:
 
 ```bash
-$env:NEXT_PUBLIC_SITE_URL="https://www.naitrons.com"   # PowerShell
-export NEXT_PUBLIC_SITE_URL="https://www.naitrons.com" # bash/zsh
+$env:NEXT_PUBLIC_SITE_URL="https://naitrons.tech"   # PowerShell
+export NEXT_PUBLIC_SITE_URL="https://naitrons.tech" # bash/zsh
 ```
 
-If unset it defaults to `https://example.com`.
+If unset it defaults to `https://naitrons.tech`.
 
 Add additional URLs (e.g., future case study pages) by appending them inside the array returned from `sitemap()`.
 

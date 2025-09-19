@@ -1,5 +1,7 @@
 "use client";
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+// Ensure React symbol remains in scope for test transforms that rely on classic runtime
+void React;
 
 type Theme = 'light' | 'dark' | 'system';
 
@@ -29,8 +31,12 @@ export function ThemeToggle() {
     if (updateState) setTheme(next);
     localStorage.setItem('theme-pref', next);
     const root = document.documentElement;
+    // Clear both explicit classes first
+    root.classList.remove('light');
+    root.classList.remove('dark');
     const effective = next === 'system' ? getSystemTheme() : next;
-    if (effective === 'dark') root.classList.add('dark'); else root.classList.remove('dark');
+    if (effective === 'dark') root.classList.add('dark');
+    if (effective === 'light') root.classList.add('light');
   }
 
   function cycle() {
@@ -56,7 +62,7 @@ export function ThemeToggle() {
       onClick={cycle}
       aria-label={!mounted ? 'Toggle theme' : `Toggle theme (currently ${labelMap[effectiveTheme]})`}
       data-theme={mounted ? effectiveTheme : 'pending'}
-      className="text-sm h-8 px-3 inline-flex items-center gap-1 rounded-md border border-black/10 dark:border-white/15 hover:bg-foreground/5 dark:hover:bg-foreground/10 transition-colors"
+  className="text-sm h-8 px-3 inline-flex items-center gap-1 rounded-md border border-black/25 dark:border-white/15 hover:bg-foreground/5 dark:hover:bg-foreground/10 transition-colors"
       suppressHydrationWarning
     >
       <span aria-hidden>{icon}</span>

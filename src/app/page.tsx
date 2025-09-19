@@ -18,10 +18,9 @@ export default function Home() {
       <Header />
       <main id="main" role="main">
         <Hero />
-        <section className="section" aria-label="Global visualization demo">
+        <section className="section" aria-label="Interactive demo">
           <div className="container flex flex-col gap-4">
-            <h2 className="text-xl md:text-2xl font-semibold tracking-tight">A Global Perspective</h2>
-            <p className="text-sm md:text-base text-foreground/70 max-w-2xl">Interactive 3D experiences can surface complex, geospatial or network-centric data intuitively. This lightweight demo illustrates an embeddable canvas capability.</p>
+            <h2 className="text-xl md:text-2xl font-semibold tracking-tight">Clarity through intelligent visuals</h2>
             <GlobeClientWrapper />
           </div>
         </section>

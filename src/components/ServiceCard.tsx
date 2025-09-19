@@ -3,7 +3,7 @@ import type { Service } from '@/lib/data';
 
 export function ServiceCard({ service }: { service: Service }) {
   return (
-    <div className="rounded-lg border border-black/10 dark:border-white/15 p-5 flex flex-col gap-3 bg-background/60 backdrop-blur-sm">
+  <div className="rounded-lg border border-black/25 dark:border-white/15 p-5 flex flex-col gap-3 bg-background/60 backdrop-blur-sm">
       <h3 className="font-medium text-lg tracking-tight">{service.title}</h3>
       <p className="text-sm text-foreground/70 leading-relaxed">{service.description}</p>
       {service.highlights && (

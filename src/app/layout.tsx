@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SEOJsonLd } from "@/components/SEOJsonLd";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://naitrons.example.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://naitrons.tech';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description:
       "Bespoke AI, automation, and visualization solutions. Discover our services and selected case studies.",
     type: "website",
-    url: "https://naitrons.example.com",
+    url: siteUrl,
     siteName: "nAItronS",
     locale: "en_US",
   },
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       "AI, automation, and data visualization services & portfolio by nAItronS.",
     creator: "@naitrons",
   },
-  metadataBase: new URL("https://naitrons.example.com"),
+  metadataBase: new URL(siteUrl),
   category: "technology",
 };
 
@@ -66,11 +66,17 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="canonical" href={siteUrl} />
+        {/* Prevent theme flash: apply saved or system theme before React hydration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(() => {try{const pref=localStorage.getItem('theme-pref')||'system';const sys=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';const eff=pref==='system'?sys:pref;const root=document.documentElement;root.classList.remove('light');root.classList.remove('dark');if(eff==='dark'){root.classList.add('dark');}if(eff==='light'){root.classList.add('light');}}catch(e){}})();`
+          }}
+        />
         <SEOJsonLd />
         {process.env.NEXT_PUBLIC_ANALYTICS_ID && (
           <script
             defer
-            data-domain="naitrons"
+            data-domain="naitrons.tech"
             data-analytics-id={process.env.NEXT_PUBLIC_ANALYTICS_ID}
             src={`https://analytics.example.com/script.js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
           />

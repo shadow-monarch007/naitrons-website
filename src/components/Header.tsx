@@ -17,7 +17,9 @@ export function Header() {
       <div className="container flex items-center justify-between h-14 gap-3">
         <div className="flex items-center gap-3">
           <Link href="/" className="font-semibold tracking-tight text-lg">
-            <span className="text-gradient bg-clip-text">nAItronS</span>
+            <span className="bg-clip-text text-transparent text-gradient">n</span>
+            <span className="brand-ai">AI</span>
+            <span className="bg-clip-text text-transparent text-gradient">tronS</span>
           </Link>
         </div>
         <div className="flex items-center gap-2">
@@ -28,7 +30,7 @@ export function Header() {
           </nav>
           <button
             type="button"
-            className="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-black/10 dark:border-white/15 hover:bg-foreground/5 dark:hover:bg-foreground/10"
+            className="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-black/25 dark:border-white/15 hover:bg-foreground/5 dark:hover:bg-foreground/10"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             onClick={() => setOpen(o => !o)}
