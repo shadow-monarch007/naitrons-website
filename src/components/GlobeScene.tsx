@@ -116,7 +116,7 @@ export function GlobeScene() {
   const isCoarse = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
   const autoRotate = !prefersReducedMotion && !isCoarse; // disable auto-rotate on touch to save battery
   return (
-  <div className="h-60 sm:h-72 w-full rounded-xl border border-black/20 dark:border-white/15 overflow-hidden" aria-label="Animated globe with global connection lines" role="img">
+  <div className="h-60 sm:h-72 w-full rounded-xl border border-black/25 dark:border-white/15 overflow-hidden" aria-label="Animated globe with global connection lines" role="img">
       <Canvas camera={{ position: [2.4, 1.2, 2.4], fov: 55 }}>
         <ambientLight intensity={ambientIntensity} />
         <directionalLight position={[5, 5, 5]} intensity={0.9} />

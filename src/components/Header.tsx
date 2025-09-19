@@ -30,7 +30,7 @@ export function Header() {
           </nav>
           <button
             type="button"
-            className="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-black/20 dark:border-white/15 hover:bg-foreground/5 dark:hover:bg-foreground/10"
+            className="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-black/25 dark:border-white/15 hover:bg-foreground/5 dark:hover:bg-foreground/10"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             onClick={() => setOpen(o => !o)}

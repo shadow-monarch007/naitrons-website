@@ -13,7 +13,7 @@ export function ValuePropsSection() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {valueProps.map((vp, i) => (
             <Reveal key={vp.id} delay={i * 0.05}>
-              <div className="p-5 rounded-lg border border-black/20 dark:border-white/15 bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/40 flex flex-col gap-3 h-full">
+              <div className="p-5 rounded-lg border border-black/25 dark:border-white/15 bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/40 flex flex-col gap-3 h-full">
                 <h3 className="text-base font-semibold tracking-tight">{vp.title}</h3>
                 <p className="text-sm text-foreground/70 leading-relaxed">{vp.summary}</p>
                 {vp.detail && <p className="text-xs text-foreground/50 leading-relaxed mt-auto">{vp.detail}</p>}

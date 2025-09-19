@@ -13,7 +13,7 @@ export function ProcessSection() {
         <ol className="grid gap-6 md:grid-cols-4 list-none counter-reset-step">
           {processSteps.map((step, i) => (
             <Reveal key={step.id} delay={i * 0.05}>
-              <li className="relative p-5 rounded-lg border border-black/20 dark:border-white/15 flex flex-col gap-3 bg-gradient-to-b from-background/70 to-background/40">
+              <li className="relative p-5 rounded-lg border border-black/25 dark:border-white/15 flex flex-col gap-3 bg-gradient-to-b from-background/70 to-background/40">
                 <span className="text-xs font-medium tracking-wide text-foreground/60">{String(i + 1).padStart(2, '0')}</span>
                 <h3 className="text-base font-semibold tracking-tight">{step.title}</h3>
                 <p className="text-sm text-foreground/70 leading-relaxed">{step.summary}</p>

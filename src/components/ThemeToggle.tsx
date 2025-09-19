@@ -62,7 +62,7 @@ export function ThemeToggle() {
       onClick={cycle}
       aria-label={!mounted ? 'Toggle theme' : `Toggle theme (currently ${labelMap[effectiveTheme]})`}
       data-theme={mounted ? effectiveTheme : 'pending'}
-  className="text-sm h-8 px-3 inline-flex items-center gap-1 rounded-md border border-black/20 dark:border-white/15 hover:bg-foreground/5 dark:hover:bg-foreground/10 transition-colors"
+  className="text-sm h-8 px-3 inline-flex items-center gap-1 rounded-md border border-black/25 dark:border-white/15 hover:bg-foreground/5 dark:hover:bg-foreground/10 transition-colors"
       suppressHydrationWarning
     >
       <span aria-hidden>{icon}</span>
