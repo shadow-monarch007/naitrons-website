@@ -1,11 +1,12 @@
 export function SEOJsonLd() {
+  const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://naitrons.tech';
   const org = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'nAItronS',
-    url: 'https://naitrons.example.com',
+    url: base,
     description: 'Applied AI, automation, and data visualization consultancy & portfolio.',
-    logo: 'https://naitrons.example.com/icon.png',
+    logo: `${base}/favicon.ico`,
     sameAs: [
       'https://www.linkedin.com/company/naitrons',
       'https://x.com/naitrons'
@@ -13,7 +14,7 @@ export function SEOJsonLd() {
     contactPoint: [{
       '@type': 'ContactPoint',
       contactType: 'sales',
-      email: 'contact@naitrons.example.com'
+      email: 'naitronsolutions@gmail.com'
     }],
     founder: {
       '@type': 'Person',

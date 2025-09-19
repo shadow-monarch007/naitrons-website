@@ -17,7 +17,9 @@ export function Header() {
       <div className="container flex items-center justify-between h-14 gap-3">
         <div className="flex items-center gap-3">
           <Link href="/" className="font-semibold tracking-tight text-lg">
-            <span className="text-gradient bg-clip-text">nAItronS</span>
+            <span className="bg-clip-text text-transparent text-gradient">n</span>
+            <span className="brand-ai">AI</span>
+            <span className="bg-clip-text text-transparent text-gradient">tronS</span>
           </Link>
         </div>
         <div className="flex items-center gap-2">

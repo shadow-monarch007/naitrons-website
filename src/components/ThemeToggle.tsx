@@ -1,5 +1,7 @@
 "use client";
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+// Ensure React symbol remains in scope for test transforms that rely on classic runtime
+void React;
 
 type Theme = 'light' | 'dark' | 'system';
 

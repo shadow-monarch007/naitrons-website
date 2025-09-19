@@ -51,10 +51,10 @@ export async function submitContact(formData: FormData): Promise<ContactActionRe
     await new Promise(r => setTimeout(r, 350));
 
     // Email integration placeholder (guarded by env)
-    if (process.env.RESEND_API_KEY) {
+  if (process.env.RESEND_API_KEY) {
       // Example pseudocode (do not import resend unless configured)
       // const resend = new Resend(process.env.RESEND_API_KEY);
-      // await resend.emails.send({ from: 'contact@naitrons.com', to: 'inbox@naitrons.com', subject: 'New Inquiry', text: JSON.stringify(parsed.data, null, 2) });
+      // await resend.emails.send({ from: 'noreply@naitrons.tech', to: 'naitronsolutions@gmail.com', subject: 'New Inquiry', text: JSON.stringify(parsed.data, null, 2) });
     }
 
     console.log("CONTACT_INQUIRY", parsed.data);

@@ -22,8 +22,8 @@ export function ContactSection() {
   return (
     <section id="contact" className="section" aria-labelledby="contact-heading">
       <div className="container flex flex-col gap-6 max-w-2xl">
-        <h2 id="contact-heading" className="text-2xl md:text-3xl font-semibold tracking-tight">Start a Conversation</h2>
-        <p className="text-sm md:text-base text-foreground/70">Tell us about your goals and we will propose a pragmatic path to value. Email <a href="mailto:contact@naitrons.example.com" className="underline underline-offset-4">contact@naitrons.example.com</a>.</p>
+  <h2 id="contact-heading" className="text-2xl md:text-3xl font-semibold tracking-tight">Let’s talk</h2>
+  <p className="text-sm md:text-base text-foreground/70">Share your goals. We’ll propose a clear, pragmatic path. Email <a href="mailto:naitronsolutions@gmail.com" className="underline underline-offset-4">naitronsolutions@gmail.com</a>.</p>
         <form className="grid gap-4" action={(fd) => startTransition(() => onAction(fd))} suppressHydrationWarning>
           <div className="grid gap-2">
             <label className="text-sm font-medium" htmlFor="name">Name</label>
