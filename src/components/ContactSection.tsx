@@ -27,16 +27,16 @@ export function ContactSection() {
         <form className="grid gap-4" action={(fd) => startTransition(() => onAction(fd))} suppressHydrationWarning>
           <div className="grid gap-2">
             <label className="text-sm font-medium" htmlFor="name">Name</label>
-            <input id="name" name="name" required disabled={isPending} className="h-11 px-3 rounded-md border border-black/15 dark:border-white/20 bg-background/70 backdrop-blur-sm focus:outline-none focus:ring ring-foreground/30" suppressHydrationWarning />
+            <input id="name" name="name" required disabled={isPending} className="h-11 px-3 rounded-md border border-black/20 dark:border-white/20 bg-background/70 backdrop-blur-sm focus:outline-none focus:ring ring-foreground/30" suppressHydrationWarning />
           </div>
           <div className="grid gap-2">
             <label className="text-sm font-medium" htmlFor="email">Email</label>
-            <input id="email" type="email" name="email" required disabled={isPending} className="h-11 px-3 rounded-md border border-black/15 dark:border-white/20 bg-background/70 backdrop-blur-sm focus:outline-none focus:ring ring-foreground/30" suppressHydrationWarning />
+            <input id="email" type="email" name="email" required disabled={isPending} className="h-11 px-3 rounded-md border border-black/20 dark:border-white/20 bg-background/70 backdrop-blur-sm focus:outline-none focus:ring ring-foreground/30" suppressHydrationWarning />
           </div>
             <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
           <div className="grid gap-2">
             <label className="text-sm font-medium" htmlFor="message">Project / Message</label>
-            <textarea id="message" name="message" rows={5} required disabled={isPending} className="p-3 rounded-md border border-black/15 dark:border-white/20 bg-background/70 backdrop-blur-sm focus:outline-none focus:ring ring-foreground/30 resize-none" suppressHydrationWarning />
+            <textarea id="message" name="message" rows={5} required disabled={isPending} className="p-3 rounded-md border border-black/20 dark:border-white/20 bg-background/70 backdrop-blur-sm focus:outline-none focus:ring ring-foreground/30 resize-none" suppressHydrationWarning />
           </div>
           <button type="submit" disabled={isPending || status === "success"} className="inline-flex items-center justify-center rounded-md bg-foreground text-background h-11 px-6 text-sm font-medium hover:opacity-90 focus:outline-none focus:ring ring-offset-2 ring-offset-background ring-foreground/40 disabled:opacity-60" suppressHydrationWarning>
             {status === "success" ? "Sent ✔" : isPending ? "Sending..." : "Send inquiry"}

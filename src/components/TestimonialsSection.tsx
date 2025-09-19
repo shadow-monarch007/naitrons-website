@@ -14,7 +14,7 @@ export function TestimonialsSection() {
         <div className="grid gap-6 md:grid-cols-2">
           {testimonials.map((t, i) => (
             <Reveal key={t.id} delay={i * 0.05}>
-              <figure className="p-6 rounded-lg border border-black/10 dark:border-white/15 bg-background/60 flex flex-col gap-4">
+              <figure className="p-6 rounded-lg border border-black/20 dark:border-white/15 bg-background/60 flex flex-col gap-4">
                 <blockquote className="text-sm md:text-base leading-relaxed text-foreground/80">“{t.quote}”</blockquote>
                 <figcaption className="text-xs text-foreground/60 font-medium tracking-wide">
                   {t.author}{t.role ? `, ${t.role}` : ''}{t.company ? ` — ${t.company}` : ''}

@@ -64,6 +64,27 @@ function TravelingDot({ curvePoints, color = '#93c5fd', speed = 0.6 }: { curvePo
   );
 }
 
+function Endpoint({ position, color = '#22d3ee' }: { position: THREE.Vector3; color?: string }) {
+  const glow = useRef<THREE.Mesh>(null!);
+  useFrame(({ clock }) => {
+    const t = (Math.sin(clock.getElapsedTime() * 2) + 1) / 2; // 0..1
+    const s = 0.04 + t * 0.04;
+    glow.current.scale.setScalar(s);
+  });
+  return (
+    <group position={position.toArray() as unknown as [number, number, number]}>
+      <mesh>
+        <sphereGeometry args={[0.015, 12, 12]} />
+        <meshBasicMaterial color={color} />
+      </mesh>
+      <mesh ref={glow}>
+        <sphereGeometry args={[0.05, 12, 12]} />
+        <meshBasicMaterial color={color} transparent opacity={0.25} blending={THREE.AdditiveBlending} />
+      </mesh>
+    </group>
+  );
+}
+
 function ConnectionsLayer() {
   const data = useMemo(() => {
     return connections.map(c => {
@@ -72,7 +93,7 @@ function ConnectionsLayer() {
       const mid = start.clone().add(end).multiplyScalar(0.5).normalize().multiplyScalar(1.35);
       const curve = new THREE.QuadraticBezierCurve3(start, mid, end);
       const points = curve.getPoints(120);
-      return { ...c, points };
+      return { ...c, points, start, end };
     });
   }, []);
   return (
@@ -81,6 +102,8 @@ function ConnectionsLayer() {
         <group key={i}>
           <Arc points={c.points} color={c.color} />
           <TravelingDot curvePoints={c.points} color={c.color} speed={0.4 + (i * 0.12)} />
+          <Endpoint position={c.start} />
+          <Endpoint position={c.end} />
         </group>
       ))}
     </group>
@@ -93,7 +116,7 @@ export function GlobeScene() {
   const isCoarse = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
   const autoRotate = !prefersReducedMotion && !isCoarse; // disable auto-rotate on touch to save battery
   return (
-    <div className="h-60 sm:h-72 w-full rounded-xl border border-black/10 dark:border-white/15 overflow-hidden" aria-label="Animated globe with global connection lines" role="img">
+  <div className="h-60 sm:h-72 w-full rounded-xl border border-black/20 dark:border-white/15 overflow-hidden" aria-label="Animated globe with global connection lines" role="img">
       <Canvas camera={{ position: [2.4, 1.2, 2.4], fov: 55 }}>
         <ambientLight intensity={ambientIntensity} />
         <directionalLight position={[5, 5, 5]} intensity={0.9} />

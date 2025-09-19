@@ -2,7 +2,7 @@ import type { PortfolioItem } from '@/lib/data';
 
 export function PortfolioCard({ item }: { item: PortfolioItem }) {
   return (
-    <article className="rounded-lg border border-black/10 dark:border-white/15 p-5 flex flex-col gap-3 bg-background/60 backdrop-blur-sm">
+  <article className="rounded-lg border border-black/20 dark:border-white/15 p-5 flex flex-col gap-3 bg-background/60 backdrop-blur-sm">
       <header className="flex flex-col gap-1">
         <h3 className="font-medium text-lg tracking-tight">{item.title}</h3>
         <p className="text-[13px] text-foreground/60">{item.summary}</p>
