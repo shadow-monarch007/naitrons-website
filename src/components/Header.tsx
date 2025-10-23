@@ -11,21 +11,28 @@ export function Header() {
     <header className="absolute top-0 left-0 right-0 w-full z-50">
       {/* Height tightened and unified across breakpoints */}
       <div className="container relative flex items-center h-16 sm:h-18 md:h-20">
-        {/* Logo at far left */}
+        {/* Brand at far left */}
         <Link href="/" aria-label="Home" className="flex items-center">
+          {/* Mobile: show compact wordmark at left; avoid center overlap */}
+          <span className="md:hidden block leading-none select-none text-xl font-extrabold tracking-tight">
+            <span className="text-[#D7BFA4]">n</span>
+            <span className="text-[#8C4513]">AI</span>
+            <span className="text-[#D7BFA4]">trons</span>
+          </span>
+          {/* Desktop: show icon slightly larger for visibility */}
           <img
             src="/logo-icon.png"
             alt="Naitrons logo"
-            className="h-7 w-auto sm:h-8 md:h-9 object-contain flex-shrink-0"
+            className="hidden md:block h-10 lg:h-11 w-auto object-contain flex-shrink-0"
           />
         </Link>
 
-        {/* Centered Title (absolute so left/right areas stay balanced) */}
-        <div className="absolute left-1/2 -translate-x-1/2">
-          <span className="block text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight leading-none select-none">
-            <span className="text-[#F5E1C8]">n</span>
+        {/* Centered Title (desktop only to keep mobile uncluttered) */}
+        <div className="absolute left-1/2 -translate-x-1/2 hidden md:block">
+          <span className="block text-2xl md:text-3xl font-extrabold tracking-tight leading-none select-none">
+            <span className="text-[#D7BFA4]">n</span>
             <span className="text-[#8C4513]">AI</span>
-            <span className="text-[#F5E1C8]">trons</span>
+            <span className="text-[#D7BFA4]">trons</span>
           </span>
         </div>
 
