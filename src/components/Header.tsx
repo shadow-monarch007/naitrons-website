@@ -12,8 +12,8 @@ export function Header() {
       <div className="container flex items-center justify-between h-20 gap-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5">
-          <img src="/logo-icon.png" alt="Naitrons" className="h-10 w-auto" />
-          <span className="text-2xl font-bold text-[#2B1A16]">Naitrons</span>
+          <img src="/logo-icon.png" alt="Naitrons" className="h-8 sm:h-9 md:h-10 w-auto" />
+          <span className="text-lg sm:text-xl md:text-2xl font-bold text-[#2B1A16]">Naitrons</span>
         </Link>
 
         {/* Desktop Navigation */}

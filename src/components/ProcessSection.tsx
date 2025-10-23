@@ -99,22 +99,22 @@ export function ProcessSection() {
         </Reveal>
 
         {/* Process Steps */}
-        <div className="space-y-32 lg:ml-32">
+        <div className="space-y-16 sm:space-y-24 md:space-y-32 ml-12 sm:ml-16 md:ml-20 lg:ml-32">
           {processSteps.map((step, index) => (
             <Reveal key={step.id} delay={index * 0.05}>
             <div className="relative" id={`step${index + 1}`} data-process-step>
               {/* Step Content */}
               <div className="max-w-3xl mx-auto text-center">
                 {/* Title Box */}
-                <div className="flex justify-center mb-6 sm:mb-8">
-                  <div className="inline-block px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-xl bg-white/50 border-2 border-[#8C4513]/20 transition-all duration-300 hover:bg-[#8C4513] hover:border-[#8C4513] hover:shadow-lg group cursor-pointer">
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#2B1A16] group-hover:text-white transition-colors duration-300">{step.title}</h3>
+                <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
+                  <div className="inline-block px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-xl bg-white/50 border-2 border-[#8C4513]/20 transition-all duration-300 hover:bg-[#8C4513] hover:border-[#8C4513] hover:shadow-lg group cursor-pointer">
+                    <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#2B1A16] group-hover:text-white transition-colors duration-300">{step.title}</h3>
                   </div>
                 </div>
 
                 {step.visual && (
-                  <div className="mb-6 sm:mb-8 flex justify-center px-4">
-                    <div className="aspect-[4/3] w-full max-w-md rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl">
+                  <div className="mb-4 sm:mb-6 md:mb-8 flex justify-center px-4">
+                    <div className="aspect-[4/3] w-full max-w-sm sm:max-w-md rounded-lg sm:rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl">
                       <img 
                         src={`https://images.unsplash.com/photo-${
                           index === 0 ? '1552664730-d307ca884978' : // Meeting/discussion
@@ -130,7 +130,7 @@ export function ProcessSection() {
                   </div>
                 )}
                 
-                <p className="text-base sm:text-lg text-[#2B1A16]/70 leading-relaxed mb-6 sm:mb-8 px-4">{step.summary}</p>
+                <p className="text-sm sm:text-base md:text-lg text-[#2B1A16]/70 leading-relaxed mb-4 sm:mb-6 md:mb-8 px-4">{step.summary}</p>
 
                 {/* Questions Pills - moved after content */}
                 {index < processQuestions.length && (

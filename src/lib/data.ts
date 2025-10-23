@@ -278,11 +278,6 @@ export const benefits: Benefit[] = [
 // FAQs data
 export const faqs: FAQ[] = [
   {
-    id: 'who-behind',
-    question: 'Who\'s behind Naitrons?',
-    answer: 'Two graduates who are passionate about AI: Nachiketh K J and Nithin Gowda B K. One focuses on design and development; the other on backend and marketing.'
-  },
-  {
     id: 'have-designs',
     question: 'I already have the designs, can you develop them?',
     answer: 'Yes! If you have existing designs, I can develop them in Webflow or Next.js. We\'ll review the designs together to ensure they\'re technically feasible and optimized for the web.'

@@ -10,8 +10,8 @@ export function ProcessRuler() {
   const container = containerRef.current;
   if (!container) return;
 
-    // Only run on large screens for performance
-    if (window.innerWidth < 1024) return;
+    // Run on all screen sizes but adjust for mobile
+    const isMobile = window.innerWidth < 768;
 
     function buildLines() {
       const root = containerRef.current as HTMLDivElement;
@@ -20,8 +20,9 @@ export function ProcessRuler() {
       // attempt to size to the steps block so ruler covers all steps including final
   const stepsWrapper = document.querySelector('.space-y-32') as HTMLElement | null;
   const height = stepsWrapper ? stepsWrapper.getBoundingClientRect().height + 200 : root.getBoundingClientRect().height;
-      const lineHeight = 2; // px
-      const gap = 12; // px
+      const lineHeight = isMobile ? 1.5 : 2; // px - thinner on mobile
+      const gap = isMobile ? 8 : 12; // px - tighter on mobile
+      const baseWidth = isMobile ? 16 : 32; // px - shorter on mobile
       // extend count slightly beyond visible height so ruler continues past launch
       const visibleCount = Math.floor(height / (lineHeight + gap));
       const count = Math.max(visibleCount + 6, 14);
@@ -32,31 +33,33 @@ export function ProcessRuler() {
         const el = document.createElement('div');
         el.className = 'process-line';
         el.style.height = `${lineHeight}px`;
-        el.style.width = '32px';
+        el.style.width = `${baseWidth}px`;
         el.style.marginBottom = `${gap}px`;
-        el.style.backgroundColor = 'rgba(255,255,255,0.08)';
+        el.style.backgroundColor = isMobile ? 'rgba(139, 69, 19, 0.15)' : 'rgba(255,255,255,0.08)';
         el.style.transition = 'width 120ms linear, background-color 160ms linear';
         el.style.position = 'relative';
         root.appendChild(el);
         linesRef.current.push(el);
       }
     }
-
     function updateLines() {
       const centerY = window.innerHeight / 2;
+      const baseWidth = isMobile ? 16 : 32;
       linesRef.current.forEach((line) => {
         const rect = line.getBoundingClientRect();
         const distance = Math.abs(rect.top + rect.height / 2 - centerY);
         // choose width based on distance
-        const widths = [32, 34, 38, 46, 62, 94];
+        const widths = isMobile ? [16, 18, 20, 24, 28, 36] : [32, 34, 38, 46, 62, 94];
         const idx = Math.max(0, Math.min(widths.length - 1, Math.floor((200 - distance) / 40)));
-        const w = widths[idx] || 32;
+        const w = widths[idx] || baseWidth;
         line.style.width = w + 'px';
 
-        // color ramp
-        const colors = ['rgba(255,255,255,0.08)', '#3D2B29', '#5C2F29', '#9A372A', '#F63A22'];
+        // color ramp - adjusted for mobile visibility
+        const colors = isMobile 
+          ? ['rgba(139, 69, 19, 0.15)', 'rgba(139, 69, 19, 0.25)', 'rgba(139, 69, 19, 0.35)', 'rgba(139, 69, 19, 0.50)', '#8B4513']
+          : ['rgba(255,255,255,0.08)', '#3D2B29', '#5C2F29', '#9A372A', '#F63A22'];
         const colorIdx = Math.max(0, Math.min(colors.length - 1, Math.floor((200 - distance) / 50)));
-        line.style.backgroundColor = colors[colorIdx] || 'rgba(255,255,255,0.08)';
+        line.style.backgroundColor = colors[colorIdx] || (isMobile ? 'rgba(139, 69, 19, 0.15)' : 'rgba(255,255,255,0.08)');
 
         // hide labels if any
         line.classList.remove('show-label');
@@ -146,5 +149,5 @@ export function ProcessRuler() {
     };
   }, []);
 
-  return <div ref={containerRef} className="absolute left-8 top-0 bottom-0 w-20 hidden lg:block" aria-hidden="true" />;
+  return <div ref={containerRef} className="absolute left-2 sm:left-4 md:left-6 lg:left-8 top-0 bottom-0 w-8 sm:w-12 md:w-16 lg:w-20 opacity-30 sm:opacity-40 md:opacity-50 lg:opacity-100" aria-hidden="true" />;
 }

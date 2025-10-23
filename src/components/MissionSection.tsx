@@ -81,13 +81,15 @@ export function MissionSection() {
           <div className="flex flex-col items-center gap-4 sm:gap-6 pt-4 sm:pt-6 border-t border-[#8C4513]/20">
             <div className="flex items-center gap-3 sm:gap-4">
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#8C4513] overflow-hidden flex items-center justify-center">
-                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-[#FAF4EE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
+                <img 
+                  src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?w=100&h=100&fit=crop&q=80" 
+                  alt="Brown Bear"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
-                <p className="font-semibold text-[#2B1A16] text-sm sm:text-base">Nachiketh K J</p>
-                <p className="text-xs sm:text-sm text-[#2B1A16]/70">Founder</p>
+                <p className="font-semibold text-[#2B1A16] text-sm sm:text-base">Naitrons Designer</p>
+                <p className="text-xs sm:text-sm text-[#2B1A16]/70">Creative Lead</p>
               </div>
             </div>
 

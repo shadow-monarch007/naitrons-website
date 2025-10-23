@@ -249,24 +249,24 @@ body {
 
 /* Section spacing scale */
 .section {
-  padding-block: 2.5rem;
+  padding-block: 3rem;
 }
 
 @media (min-width: 640px) {
   .section {
-    padding-block: 3.5rem;
+    padding-block: 4rem;
   }
 }
 
 @media (min-width: 768px) {
   .section {
-    padding-block: 5rem;
+    padding-block: 5.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .section {
-    padding-block: clamp(5rem, 10vh, 8rem);
+    padding-block: clamp(6rem, 10vh, 8rem);
   }
 }
 
@@ -718,9 +718,24 @@ body {
 /* Ensure continuous flow by duplicating content via transform loop technique when needed */
 .phrase-row:before { content: attr(data-dup); display: inline-block; margin-left: 2.25rem; }
 
-@media (max-width: 768px) {
-  .phrase-cluster { display: none; }
-  .phrase-wrap { display: none; }
+@media (max-width: 640px) {
+  .phrase-cluster { 
+    opacity: 0.15;
+    font-size: 0.75rem;
+  }
+  .phrase-wrap { 
+    margin-top: 0.75rem;
+    max-width: 100%;
+  }
+  .phrase-row {
+    gap: 1.5rem;
+    font-size: 0.75rem;
+    padding: 0.35rem 0;
+  }
+  .phrase-row span {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.7rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -751,8 +766,9 @@ body {
     left: 50%; 
     transform: translateX(-50%); 
     top: -2rem; 
-    width: 36rem; 
-    height: 36rem; 
+    width: 28rem; 
+    height: 28rem;
+    opacity: 0.35; 
     opacity: 0.4; 
   }
 }

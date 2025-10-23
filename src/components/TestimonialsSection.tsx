@@ -101,9 +101,16 @@ export function TestimonialsSection() {
             {/* Author */}
             <div className="flex items-center justify-center gap-4">
               <div className="w-12 h-12 rounded-full bg-[#8C4513] overflow-hidden flex items-center justify-center">
-                <svg className="w-6 h-6 text-[#FAF4EE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
+                <img 
+                  src={currentIndex === 0 
+                    ? "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&q=80"
+                    : currentIndex === 1
+                    ? "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&q=80"
+                    : "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&q=80"
+                  }
+                  alt={currentTestimonial.author}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="text-left">
                 <p className="font-semibold text-[#2B1A16]">{currentTestimonial.author}</p>
