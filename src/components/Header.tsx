@@ -9,28 +9,35 @@ export function Header() {
 
   return (
     <header className="absolute top-0 left-0 right-0 w-full z-30">
-      <div className="container flex items-center justify-between h-20 gap-4">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-1">
-          <img 
-            src="/logo-icon.png" 
-            alt="Naitrons" 
-            className="h-10 w-10 sm:h-11 sm:w-11 object-contain flex-shrink-0" 
+      {/* Height tightened and unified across breakpoints */}
+      <div className="container relative flex items-center h-16 sm:h-18 md:h-20">
+        {/* Logo at far left */}
+        <Link href="/" aria-label="Home" className="flex items-center">
+          <img
+            src="/logo-icon.png"
+            alt="Naitrons logo"
+            className="h-7 w-auto sm:h-8 md:h-9 object-contain flex-shrink-0"
           />
-          <span className="text-3xl sm:text-4xl font-bold text-[#2B1A16] leading-[1]">Naitrons</span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav aria-label="Main navigation" className="hidden md:flex items-center gap-8 text-[15px]">
+        {/* Centered Title (absolute so left/right areas stay balanced) */}
+        <div className="absolute left-1/2 -translate-x-1/2">
+          <span className="block text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-[#2B1A16] leading-none">
+            Naitrons
+          </span>
+        </div>
+
+        {/* Desktop Navigation on the right */}
+        <nav aria-label="Main navigation" className="ml-auto hidden md:flex items-center gap-8 text-[15px]">
           <Link href="#process" className="text-[#2B1A16]/70 hover:text-[#8C4513] transition-colors font-medium">Process</Link>
           <Link href="#work" className="text-[#2B1A16]/70 hover:text-[#8C4513] transition-colors font-medium">Work</Link>
           <Link href="#about" className="text-[#2B1A16]/70 hover:text-[#8C4513] transition-colors font-medium">About</Link>
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button (right) */}
         <button
           type="button"
-          className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg hover:bg-[#2B1A16]/10 transition-colors text-[#2B1A16] bg-transparent"
+          className="ml-auto md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg hover:bg-[#2B1A16]/10 transition-colors text-[#2B1A16] bg-transparent"
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           onClick={() => setOpen(o => !o)}

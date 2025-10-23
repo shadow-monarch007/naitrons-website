@@ -3,7 +3,7 @@ import { Header } from './Header';
 
 export function Hero() {
   return (
-    <section className="section pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-12 sm:pb-16 md:pb-20 relative overflow-hidden bg-gradient-to-br from-[#FAF4EE] via-[#FAF4EE] to-[#F5E1C8]/30" id="hero" aria-label="Hero">
+    <section className="section pt-40 sm:pt-44 md:pt-48 lg:pt-52 pb-12 sm:pb-16 md:pb-20 relative overflow-hidden bg-gradient-to-br from-[#FAF4EE] via-[#FAF4EE] to-[#F5E1C8]/30" id="hero" aria-label="Hero">
       <Header />
       {/* Decorative background & border — purely visual */}
       <div className="hero-decor pointer-events-none" aria-hidden="true">
