@@ -32,12 +32,12 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      { url: '/favicon.png', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
       { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon.png', sizes: '16x16', type: 'image/png' },
     ],
     apple: '/naitrons-logo.png',
-    shortcut: '/favicon.png',
+    shortcut: ['/icon.svg', '/favicon.png'],
   },
   openGraph: {
     title: "Naitrons — AI Solutions & Portfolio",
