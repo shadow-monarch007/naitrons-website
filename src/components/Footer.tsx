@@ -7,8 +7,12 @@ export function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-3 sm:gap-4">
             <div className="flex items-center gap-1.5">
-              <img src="/logo-icon.png" alt="Naitrons" className="h-6 sm:h-7 w-auto brightness-125" />
-              <span className="text-lg sm:text-xl font-bold text-[#C06C43]">Naitrons</span>
+              <img 
+                src="/logo-icon.png" 
+                alt="Naitrons" 
+                className="h-6 w-6 sm:h-7 sm:w-7 object-contain flex-shrink-0 brightness-125" 
+              />
+              <span className="text-lg sm:text-xl font-bold text-[#C06C43] leading-none">Naitrons</span>
             </div>
             <p className="text-[#F5E1C8]/80 text-xs sm:text-sm leading-relaxed">
               AI solutions and automation for ambitious teams.
