@@ -15,9 +15,9 @@ export function Header() {
           <img 
             src="/logo-icon.png" 
             alt="Naitrons" 
-            className="h-9 w-9 sm:h-10 sm:w-10 object-contain flex-shrink-0" 
+            className="h-[36px] w-[36px] sm:h-[40px] sm:w-[40px] object-contain flex-shrink-0" 
           />
-          <span className="text-3xl sm:text-4xl font-bold text-[#2B1A16] leading-none">Naitrons</span>
+          <span className="text-[36px] sm:text-[40px] font-bold text-[#2B1A16] leading-none">Naitrons</span>
         </Link>
 
         {/* Desktop Navigation */}

@@ -10,9 +10,9 @@ export function Footer() {
               <img 
                 src="/logo-icon.png" 
                 alt="Naitrons" 
-                className="h-7 w-7 sm:h-8 sm:w-8 object-contain flex-shrink-0 brightness-125" 
+                className="h-[28px] w-[28px] sm:h-[32px] sm:w-[32px] object-contain flex-shrink-0 brightness-125" 
               />
-              <span className="text-2xl sm:text-3xl font-bold text-[#C06C43] leading-none">Naitrons</span>
+              <span className="text-[28px] sm:text-[32px] font-bold text-[#C06C43] leading-none">Naitrons</span>
             </div>
             <p className="text-[#F5E1C8]/80 text-xs sm:text-sm leading-relaxed">
               AI solutions and automation for ambitious teams.
