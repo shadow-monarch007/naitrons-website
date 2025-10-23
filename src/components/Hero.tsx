@@ -57,15 +57,6 @@ export function Hero() {
       </div>
       <div className="container px-4 sm:px-6">
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center gap-6 sm:gap-8">
-          {/* Pill Badge */}
-          <Reveal>
-          <div className="pill-badge bg-[#8C4513] border-[#8C4513] animate-float text-xs sm:text-sm md:text-base">
-            <a href="/contact" className="flex items-center gap-1.5 sm:gap-2 text-[#FAF4EE] hover:text-white transition-colors px-1">
-              <span className="font-semibold">Launch in 4-6 weeks</span>
-              <span className="ml-1 sm:ml-2">→</span>
-            </a>
-          </div>
-          </Reveal>
 
           {/* Main Headline */}
           <Reveal delay={0.05}>
