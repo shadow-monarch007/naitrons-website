@@ -11,13 +11,13 @@ export function Header() {
     <header className="absolute top-0 left-0 right-0 w-full z-30">
       <div className="container flex items-center justify-between h-20 gap-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-0.5">
+        <Link href="/" className="flex items-center gap-1">
           <img 
             src="/logo-icon.png" 
             alt="Naitrons" 
-            className="h-[36px] w-[36px] sm:h-[40px] sm:w-[40px] object-contain flex-shrink-0" 
+            className="h-10 w-10 sm:h-11 sm:w-11 object-contain flex-shrink-0" 
           />
-          <span className="text-[36px] sm:text-[40px] font-bold text-[#2B1A16] leading-none">Naitrons</span>
+          <span className="text-3xl sm:text-4xl font-bold text-[#2B1A16] leading-[1]">Naitrons</span>
         </Link>
 
         {/* Desktop Navigation */}

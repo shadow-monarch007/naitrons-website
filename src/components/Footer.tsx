@@ -6,13 +6,13 @@ export function Footer() {
         <div className="grid sm:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-12 md:mb-16">
           {/* Brand */}
           <div className="flex flex-col gap-3 sm:gap-4">
-            <div className="flex items-center gap-0.5">
+            <div className="flex items-center gap-1">
               <img 
                 src="/logo-icon.png" 
                 alt="Naitrons" 
-                className="h-[28px] w-[28px] sm:h-[32px] sm:w-[32px] object-contain flex-shrink-0 brightness-125" 
+                className="h-8 w-8 sm:h-9 sm:w-9 object-contain flex-shrink-0 brightness-125" 
               />
-              <span className="text-[28px] sm:text-[32px] font-bold text-[#C06C43] leading-none">Naitrons</span>
+              <span className="text-2xl sm:text-3xl font-bold text-[#C06C43] leading-[1]">Naitrons</span>
             </div>
             <p className="text-[#F5E1C8]/80 text-xs sm:text-sm leading-relaxed">
               AI solutions and automation for ambitious teams.
