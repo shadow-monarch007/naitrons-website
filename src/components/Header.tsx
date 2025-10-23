@@ -8,7 +8,7 @@ export function Header() {
   // Header is scoped to the Hero section and not fixed site-wide
 
   return (
-    <header className="absolute top-0 left-0 right-0 w-full z-30">
+    <header className="absolute top-0 left-0 right-0 w-full z-50">
       {/* Height tightened and unified across breakpoints */}
       <div className="container relative flex items-center h-16 sm:h-18 md:h-20">
         {/* Logo at far left */}
@@ -22,8 +22,10 @@ export function Header() {
 
         {/* Centered Title (absolute so left/right areas stay balanced) */}
         <div className="absolute left-1/2 -translate-x-1/2">
-          <span className="block text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-[#2B1A16] leading-none">
-            Naitrons
+          <span className="block text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight leading-none select-none">
+            <span className="text-[#F5E1C8]">n</span>
+            <span className="text-[#8C4513]">AI</span>
+            <span className="text-[#F5E1C8]">trons</span>
           </span>
         </div>
 
