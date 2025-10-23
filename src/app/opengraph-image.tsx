@@ -1,13 +1,12 @@
 import { ImageResponse } from 'next/og';
-import type { NextRequest } from 'next/server';
 
-export const runtime = 'edge';
+// Use Node.js runtime for broader compatibility in dev/prod on Windows/Webpack
+export const runtime = 'nodejs';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export default async function OgImage(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const title = searchParams.get('title') || 'nAItronS — Applied AI & Automation';
+export default function OgImage() {
+  const title = 'nAItronS — Applied AI & Automation';
   return new ImageResponse(
     (
       <div
@@ -27,8 +26,6 @@ export default async function OgImage(req: NextRequest) {
         <div style={{ fontSize: 24, opacity: 0.8 }}>nAItronS • AI Strategy • ML Engineering • Automation</div>
       </div>
     ),
-    {
-      ...size,
-    }
+    size
   );
 }

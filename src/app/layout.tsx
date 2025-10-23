@@ -17,33 +17,42 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "nAItronS — AI Solutions & Portfolio",
-    template: "%s | nAItronS",
+    default: "Naitrons — AI Solutions & Portfolio",
+    template: "%s | Naitrons",
   },
   description:
-    "nAItronS delivers bespoke AI, automation, and data visualization solutions. Explore our services and portfolio.",
+    "Naitrons delivers bespoke AI, automation, and data visualization solutions. Explore our services and portfolio.",
   keywords: [
-    "nAItronS",
+    "Naitrons",
     "AI consulting",
     "machine learning",
     "automation",
     "data visualization",
     "portfolio",
   ],
+  icons: {
+    icon: [
+      { url: '/favicon.png', sizes: 'any' },
+      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/naitrons-logo.png',
+    shortcut: '/favicon.png',
+  },
   openGraph: {
-    title: "nAItronS — AI Solutions & Portfolio",
+    title: "Naitrons — AI Solutions & Portfolio",
     description:
       "Bespoke AI, automation, and visualization solutions. Discover our services and selected case studies.",
     type: "website",
     url: siteUrl,
-    siteName: "nAItronS",
+    siteName: "Naitrons",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "nAItronS — AI Solutions & Portfolio",
+    title: "Naitrons — AI Solutions & Portfolio",
     description:
-      "AI, automation, and data visualization services & portfolio by nAItronS.",
+      "AI, automation, and data visualization services & portfolio by Naitrons.",
     creator: "@naitrons",
   },
   metadataBase: new URL(siteUrl),
@@ -53,6 +62,8 @@ export const metadata: Metadata = {
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
   viewportFit: 'cover' as const,
 };
 
@@ -81,6 +92,11 @@ export default function RootLayout({
             src={`https://analytics.example.com/script.js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
           />
         )}
+        {/* GSAP for animations - load only when needed */}
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}

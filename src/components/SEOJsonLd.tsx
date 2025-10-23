@@ -3,10 +3,10 @@ export function SEOJsonLd() {
   const org = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'nAItronS',
+    name: 'Naitrons',
     url: base,
     description: 'Applied AI, automation, and data visualization consultancy & portfolio.',
-    logo: `${base}/favicon.ico`,
+    logo: `${base}/naitrons-logo.png`,
     sameAs: [
       'https://www.linkedin.com/company/naitrons',
       'https://x.com/naitrons'
@@ -18,7 +18,7 @@ export function SEOJsonLd() {
     }],
     founder: {
       '@type': 'Person',
-      name: 'nAItronS Team'
+      name: 'Naitrons Team'
     }
   };
 

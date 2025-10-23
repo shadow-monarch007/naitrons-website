@@ -11,7 +11,7 @@ const securityHeaders = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // 'unsafe-*' kept until further hardening (Framer Motion / R3F dev)
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob:",
+      "img-src 'self' data: blob: https://images.unsplash.com",
       "font-src 'self' data:",
       "connect-src 'self'",
       "frame-ancestors 'self'",
@@ -22,6 +22,14 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  },
   async headers() {
     return [
       {
@@ -30,9 +38,10 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  experimental: {
-    optimizePackageImports: ['three', '@react-three/drei', '@react-three/fiber'],
-  }
+  // Disable optimizePackageImports to avoid potential interop/runtime issues with Webpack bundler
+  // experimental: {
+  //   optimizePackageImports: ['three', '@react-three/drei', '@react-three/fiber'],
+  // }
 };
 
 export default nextConfig;

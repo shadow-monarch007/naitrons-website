@@ -39,12 +39,12 @@ if (typeof win !== 'undefined' && typeof win.matchMedia !== 'function') {
 			media: query,
 			onchange: null,
 			// Legacy API
-			addListener: (_listener: (this: MediaQueryList, ev: MediaQueryListEvent) => void) => {},
-			removeListener: (_listener: (this: MediaQueryList, ev: MediaQueryListEvent) => void) => {},
+			addListener: () => {},
+			removeListener: () => {},
 			// Modern EventTarget API
-			addEventListener: (_type: string, _listener: EventListenerOrEventListenerObject) => {},
-			removeEventListener: (_type: string, _listener: EventListenerOrEventListenerObject) => {},
-			dispatchEvent: (_event: Event) => false,
+			addEventListener: () => {},
+			removeEventListener: () => {},
+			dispatchEvent: () => false,
 		} as unknown as MediaQueryList;
 		return mql;
 	};
