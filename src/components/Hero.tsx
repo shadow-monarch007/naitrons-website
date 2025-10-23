@@ -59,24 +59,24 @@ export function Hero() {
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center gap-6 sm:gap-8">
           {/* Pill Badge */}
           <Reveal>
-          <div className="pill-badge bg-[#8C4513] border-[#8C4513] animate-float text-sm sm:text-base">
-            <a href="/contact" className="flex items-center gap-2 text-[#FAF4EE] hover:text-white transition-colors">
+          <div className="pill-badge bg-[#8C4513] border-[#8C4513] animate-float text-xs sm:text-sm md:text-base">
+            <a href="/contact" className="flex items-center gap-1.5 sm:gap-2 text-[#FAF4EE] hover:text-white transition-colors px-1">
               <span className="font-semibold">Launch in 4-6 weeks</span>
-              <span className="ml-2">→</span>
+              <span className="ml-1 sm:ml-2">→</span>
             </a>
           </div>
           </Reveal>
 
           {/* Main Headline */}
           <Reveal delay={0.05}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.1] text-[#2B1A16] px-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.15] sm:leading-[1.1] text-[#2B1A16] px-4 max-w-5xl">
               Crafted websites for <span className="text-[#8C4513]">ambitious founders</span> & businesses
             </h1>
           </Reveal>
 
           {/* Subheading */}
           <Reveal delay={0.1}>
-            <div className="max-w-2xl flex flex-col gap-2 text-base sm:text-lg md:text-xl text-[#2B1A16]/70 px-4">
+            <div className="max-w-2xl flex flex-col gap-2 text-sm sm:text-base md:text-lg lg:text-xl text-[#2B1A16]/70 px-4">
               <p>We help founders bring their stories to life online.</p>
               <p className="text-[#2B1A16] font-medium">
                 One hand on design, one on development.
@@ -86,14 +86,14 @@ export function Hero() {
 
           {/* CTA Buttons */}
           <Reveal delay={0.15}>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 w-full sm:w-auto px-4">
-            <a href="/contact" className="btn-primary btn-slide hover-lift group text-base sm:text-lg py-4 sm:py-5 px-6 sm:px-8 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-4 w-full sm:w-auto px-4">
+            <a href="/contact" className="btn-primary btn-slide hover-lift group text-sm sm:text-base md:text-lg py-3 sm:py-4 md:py-5 px-5 sm:px-6 md:px-8 justify-center">
               <span className="relative z-10">Get started</span>
-              <svg className="w-5 h-5 sm:w-6 sm:h-6 relative z-10 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 relative z-10 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
-            <a href="#work" className="btn-secondary hover-lift font-bold shadow-md hover:shadow-lg transition-all group">
+            <a href="#work" className="btn-secondary hover-lift font-bold shadow-md hover:shadow-lg transition-all group text-sm sm:text-base py-3 sm:py-4 px-5 sm:px-6 justify-center">
               <span>Learn more</span>
               <svg className="w-4 h-4 transition-transform group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

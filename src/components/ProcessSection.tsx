@@ -45,9 +45,9 @@ export function ProcessSection() {
   <div className="container px-4 sm:px-6">
         {/* Section Header */}
         <Reveal>
-        <div className="mb-12 sm:mb-16 text-center relative">
-          <p className="text-[#C06C43] text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3 sm:mb-4">Process</p>
-          <h2 id="process-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight max-w-4xl mx-auto text-[#2B1A16] relative z-20 px-4">
+        <div className="mb-8 sm:mb-12 md:mb-16 text-center relative">
+          <p className="text-[#C06C43] text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4">Process</p>
+          <h2 id="process-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight max-w-4xl mx-auto text-[#2B1A16] relative z-20 px-4">
             How we take you from <span className="text-[#8C4513]">zero</span> to launch
           </h2>
 
@@ -134,11 +134,11 @@ export function ProcessSection() {
 
                 {/* Questions Pills - moved after content */}
                 {index < processQuestions.length && (
-                  <div className="flex flex-wrap gap-3 justify-center">
+                  <div className="flex flex-wrap gap-2 sm:gap-3 justify-center px-2">
                     {processQuestions[index].map((question, qIndex) => (
                       <div
                         key={qIndex}
-                        className="inline-flex items-center px-4 py-2 rounded-full bg-[#FAF4EE] border border-[#8C4513] text-[#8C4513] text-sm font-medium hover:bg-[#8C4513] hover:text-white transition-colors duration-300 cursor-pointer"
+                        className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#FAF4EE] border border-[#8C4513] text-[#8C4513] text-xs sm:text-sm font-medium hover:bg-[#8C4513] hover:text-white transition-colors duration-300 cursor-pointer"
                       >
                         {question}
                       </div>

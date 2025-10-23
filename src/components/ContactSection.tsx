@@ -21,9 +21,9 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="section bg-[#2B1A16]" aria-labelledby="contact-heading">
-      <div className="container flex flex-col gap-6 max-w-2xl">
-  <h2 id="contact-heading" className="text-2xl md:text-3xl font-semibold tracking-tight text-[#F5E1C8]">Get in touch</h2>
-  <p className="text-sm md:text-base text-[#F5E1C8]/80">Share your goals. We&apos;ll propose a clear, pragmatic path. Email <a href="mailto:naitronsolutions@gmail.com" className="underline underline-offset-4 text-[#C06C43] hover:text-[#D7BFA4]">naitronsolutions@gmail.com</a>.</p>
+      <div className="container flex flex-col gap-4 sm:gap-5 md:gap-6 max-w-2xl px-4 sm:px-6">
+  <h2 id="contact-heading" className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-[#F5E1C8]">Get in touch</h2>
+  <p className="text-sm sm:text-base text-[#F5E1C8]/80">Share your goals. We&apos;ll propose a clear, pragmatic path. Email <a href="mailto:naitronsolutions@gmail.com" className="underline underline-offset-4 text-[#C06C43] hover:text-[#D7BFA4]">naitronsolutions@gmail.com</a>.</p>
         <form className="grid gap-4" action={(fd) => startTransition(() => onAction(fd))} suppressHydrationWarning>
           <div className="grid gap-2">
             <label className="text-sm font-medium text-[#F5E1C8]" htmlFor="name">Name</label>
